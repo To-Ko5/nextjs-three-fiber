@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "airbnb-base"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    // "no-console": ["warn"]
+    "linebreak-style": "off",
+    "semi": ["off"],
+    "comma-dangle": ["off"],
+    "no-undef": ["off"]
+  }
 }
