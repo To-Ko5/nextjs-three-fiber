@@ -1,6 +1,6 @@
 'use client'
 
-import { Image } from '@react-three/drei'
+import { Image, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
 
@@ -18,7 +18,11 @@ const Page = () => {
   return (
     <div className="h-dvh">
       <Canvas>
-        <Images />
+        <ScrollControls pages={3} damping={0.1}>
+          <Scroll>
+            <Images />
+          </Scroll>
+        </ScrollControls>
       </Canvas>
     </div>
   )
