@@ -7,7 +7,7 @@ import React from 'react'
 const Images = () => {
   return (
     <group>
-      <Image url="./photo.jpg" scale={[4, 3, 1]} position={[1, 1, 1]} a />
+      <Image url="./photo.jpg" scale={[4, 3, 1]} position={[1, 1, 1]} />
       <Image url="./photo.jpg" scale={[1, 3, 1]} position={[-1, -1, 1]} />
       <Image url="./photo.jpg" scale={[1.4, 1, 1]} position={[-1, 2, 0]} />
     </group>
@@ -21,6 +21,12 @@ const Page = () => {
         <ScrollControls pages={3} damping={0.1}>
           <Scroll>
             <Images />
+          </Scroll>
+
+          <Scroll html>
+            <h1 className="absolute top-40 left-40 text-8xl text-white">
+              Title
+            </h1>
           </Scroll>
         </ScrollControls>
       </Canvas>
