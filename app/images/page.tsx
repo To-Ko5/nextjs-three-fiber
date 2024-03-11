@@ -27,9 +27,9 @@ const Images = () => {
   })
   return (
     <group ref={group}>
-      <Image url="./photo.jpg" scale={[4, 3, 1]} position={[1, 1, 1]} />
-      <Image url="./photo.jpg" scale={[1, 3, 1]} position={[-1, -1, 1]} />
-      <Image url="./photo.jpg" scale={[1.4, 1, 1]} position={[-1, 2, 0]} />
+      <Image url="./photo.jpg" scale={scale} position={[1, 1, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[1, -1.5, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[1, -3.5, 1]} />
     </group>
   )
 }
