@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import {
   Image,
   Scroll,
@@ -36,20 +37,26 @@ const Images = () => {
 
 const Page = () => {
   return (
-    <div className="h-dvh">
-      <Canvas>
-        <ScrollControls pages={3} damping={0.1}>
-          <Scroll>
-            <Images />
-          </Scroll>
+    <div>
+      <div className="h-dvh">
+        <Canvas>
+          <ScrollControls pages={3} damping={0.1}>
+            <Scroll>
+              <Images />
+            </Scroll>
 
-          <Scroll html>
-            <h1 className="absolute top-40 left-40 text-8xl text-white">
-              Title
-            </h1>
-          </Scroll>
-        </ScrollControls>
-      </Canvas>
+            <Scroll html>
+              <h1 className="absolute top-40 left-40 text-8xl text-white">
+                Title
+              </h1>
+            </Scroll>
+          </ScrollControls>
+        </Canvas>
+      </div>
+
+      <div className="text-center mt-40">
+        <Button>End</Button>
+      </div>
     </div>
   )
 }
