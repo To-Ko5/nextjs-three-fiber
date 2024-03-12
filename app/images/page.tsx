@@ -17,7 +17,7 @@ const Images = () => {
   const scale = useAspect(
     1900, // Pixel-width
     500, // Pixel-height
-    1 - 100 / 150 // Optional scaling factor
+    1 - 100 / 150 // Optional scaling factor 1 - (maxWidth / viewport.width)
   )
 
   useFrame(() => {
@@ -27,9 +27,9 @@ const Images = () => {
   })
   return (
     <group ref={group}>
-      <Image url="./photo.jpg" scale={scale} position={[1, 1, 1]} />
-      <Image url="./photo.jpg" scale={scale} position={[1, -1.5, 1]} />
-      <Image url="./photo.jpg" scale={scale} position={[1, -3.5, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[0, 1, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[0, -1.5, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[0, -3.5, 1]} />
     </group>
   )
 }
