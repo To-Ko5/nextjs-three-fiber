@@ -21,6 +21,12 @@ const Images = () => {
     1 - 100 / 150 // Optional scaling factor 1 - (maxWidth / viewport.width)
   )
 
+  const scaleVertical = useAspect(
+    500, // Pixel-width
+    1900, // Pixel-height
+    1 - 100 / 150
+  )
+
   useFrame(() => {
     group.current.children[0].material.zoom = 1 + scrollDate.range(0, 1 / 3) / 3
     group.current.children[1].material.zoom = 1 + scrollDate.range(0, 1 / 3) / 3
@@ -28,9 +34,9 @@ const Images = () => {
   })
   return (
     <group ref={group}>
-      <Image url="./photo.jpg" scale={scale} position={[0, 1, 1]} />
-      <Image url="./photo.jpg" scale={scale} position={[0, -1.5, 1]} />
-      <Image url="./photo.jpg" scale={scale} position={[0, -3.5, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[0, 1.8, 1]} />
+      <Image url="./photo.jpg" scale={scale} position={[0, -0.9, 1]} />
+      <Image url="./photo.jpg" scale={scaleVertical} position={[0, -9, 1]} />
     </group>
   )
 }
