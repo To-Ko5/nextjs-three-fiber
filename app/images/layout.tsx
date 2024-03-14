@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ThemeButton from '../components/theme-button'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,6 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="fixed z-10 top-1 left-1">
+        <ThemeButton />
+      </div>
       <div className="flex-grow">{children}</div>
     </div>
   )
