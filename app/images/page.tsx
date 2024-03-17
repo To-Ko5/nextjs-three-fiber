@@ -5,6 +5,8 @@ import {
   Image,
   Scroll,
   ScrollControls,
+  SpotLight,
+  SpotLightShadow,
   useAspect,
   useScroll
 } from '@react-three/drei'
@@ -32,6 +34,7 @@ const Images = () => {
     group.current.children[1].material.zoom = 1 + scrollDate.range(0, 1 / 3) / 3
     group.current.children[2].material.zoom = 1 + scrollDate.range(0, 1 / 3) / 3
   })
+
   return (
     <group ref={group}>
       <Image url="./photo.jpg" scale={scale} position={[0, 1.8, 1]} />
@@ -57,6 +60,14 @@ const Page = () => {
               </h1>
             </Scroll>
           </ScrollControls>
+
+          <SpotLight
+            distance={5}
+            angle={0.2}
+            attenuation={5}
+            anglePower={6}
+            position={[3, 3, 3]} // Diffuse-cone anglePower (default: 5)
+          />
         </Canvas>
       </div>
 
