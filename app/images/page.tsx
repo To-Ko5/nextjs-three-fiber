@@ -24,9 +24,9 @@ const Images = () => {
   )
 
   const scaleVertical = useAspect(
-    500, // Pixel-width
-    1900, // Pixel-height
-    1 - 100 / 150
+    100, // Pixel-width
+    200, // Pixel-height
+    1 - 100 / 120
   )
 
   useFrame(() => {
