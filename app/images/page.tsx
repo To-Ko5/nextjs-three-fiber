@@ -6,12 +6,12 @@ import {
   Scroll,
   ScrollControls,
   SpotLight,
-  SpotLightShadow,
   useAspect,
   useScroll
 } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
+import { Flex, Box } from '@react-three/flex'
 
 const Images = () => {
   const group = useRef(null)
@@ -39,7 +39,7 @@ const Images = () => {
     <group ref={group}>
       <Image url="./photo.jpg" scale={scale} position={[0, 1.8, 1]} />
       <Image url="./photo.jpg" scale={scale} position={[0, -0.9, 1]} />
-      <Image url="./photo.jpg" scale={scaleVertical} position={[0, -9, 1]} />
+      <Image url="./photo.jpg" scale={scaleVertical} position={[0, -5, 1]} />
     </group>
   )
 }
@@ -49,7 +49,7 @@ const Page = () => {
     <div>
       <div className="h-dvh">
         <Canvas>
-          <ScrollControls pages={3} damping={0.1}>
+          <ScrollControls pages={5} damping={0.1}>
             <Scroll>
               <Images />
             </Scroll>
@@ -58,6 +58,25 @@ const Page = () => {
               <h1 className="absolute top-40 left-40 text-8xl text-white">
                 Title
               </h1>
+            </Scroll>
+
+            <Scroll>
+              <Flex
+                justifyContent="center"
+                alignItems="center"
+                position={[0, -8, 1]}
+                flexDirection="row"
+              >
+                <Box>
+                  <Image url="./photo.jpg" />
+                </Box>
+                <Box>
+                  <Image url="./photo.jpg" />
+                </Box>
+                <Box>
+                  <Image url="./photo.jpg" />
+                </Box>
+              </Flex>
             </Scroll>
           </ScrollControls>
 
