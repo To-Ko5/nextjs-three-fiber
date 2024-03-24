@@ -9,6 +9,14 @@ import {
 } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
+import {
+  Bloom,
+  DepthOfField,
+  EffectComposer,
+  Noise,
+  Scanline,
+  Vignette
+} from '@react-three/postprocessing'
 
 const Images = () => {
   const group = useRef(null)
@@ -56,7 +64,34 @@ const Page = () => {
                 Title
               </h1>
             </Scroll>
+
+            <Scroll html>
+              <h1>html in here (optional)</h1>
+              <h1 className="absolute top-[100dvh]">second page</h1>
+              <h1 className="absolute top-[200dvh]">third page</h1>
+              <footer className="absolute top-[280dvh] h-[20dvh] text-muted-foreground ">
+                footer
+              </footer>
+            </Scroll>
           </ScrollControls>
+
+          <EffectComposer multisampling={3} autoClear>
+            {/* <DepthOfField
+              focusDistance={0}
+              focalLength={0.02}
+              bokehScale={2}
+              height={480}
+            /> */}
+            {/* <Bloom
+              luminanceThreshold={0}
+              luminanceSmoothing={0.9}
+              height={300}
+              opacity={3}
+            /> */}
+            <Noise opacity={0.06} />
+            {/* <Scanline density={5} /> */}
+            <Vignette eskil={false} offset={0.1} darkness={1.1} />
+          </EffectComposer>
 
           {/* <SpotLight
             distance={6}
